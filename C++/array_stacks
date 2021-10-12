@@ -1,0 +1,84 @@
+#include <iostream>
+#define SIZE 5
+int arr[SIZE];
+int top = -1;  ///stack is empty
+using namespace std;
+
+bool isempty()
+{
+  if(top==-1)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+void push(int value)
+{
+  if(top==SIZE-1)  //0==4
+  {
+    cout<<"Stack is full"<<endl;
+  }
+  else
+  {
+    top++; 
+    arr[top] = value;
+  }
+}
+
+void pop()
+{
+  if(isempty())
+  {
+    cout<<"Stack is empty"<<endl;
+  }
+  else
+  {
+    top--;
+  }
+}
+
+
+void show_top()
+{
+  if(isempty())
+  {
+    cout<<"Stack is empty"<<endl;
+  }
+  else
+  {
+    cout<<"Element on the top: "<<arr[top]<<endl;
+  }
+}
+
+
+void displayStack()
+{
+  if(isempty())
+  {
+    cout<<"Stack is empty"<<endl;
+  }
+  else
+  {
+    for(int i = 0; i<=top; i++)
+    {
+      cout<<arr[i]<<endl;
+    }
+  }
+}
+
+int main()
+{
+  push(200);
+  push(300);
+  push(500);        
+
+  show_top();   //500
+
+  displayStack();
+
+  return 0;
+}
